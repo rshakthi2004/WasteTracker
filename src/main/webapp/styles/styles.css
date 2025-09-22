@@ -1,0 +1,542 @@
+/* 🌍 Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+  background: url('../pic/background.webp') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding-top: 70px;
+  color: #333;
+}
+
+/* 🔐 Register & Forgot Password Containers */
+.register-container,
+.forgot-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  margin: 100px auto;
+  width: 420px;
+  max-width: 90%;
+}
+
+/* Headings */
+.register-container h1,
+.forgot-container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #4caf50;
+}
+
+/* Form Inputs */
+.register-container input,
+.forgot-container input,
+.register-container select,
+.forgot-container select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Data table images */
+#data-table img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Admin table photo links */
+.photo-link {
+  color: #4caf50;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.photo-link:hover {
+  text-decoration: underline;
+  color: #388e3c;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  padding-top: 60px;
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #ccc;
+}
+
+/* Buttons */
+.register-container button,
+.forgot-container button {
+  width: 100%;
+  padding: 12px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.register-container button:hover,
+.forgot-container button:hover {
+  background: #388e3c;
+}
+
+/* Links under forms */
+.register-container p,
+.forgot-container p {
+  margin-top: 12px;
+  font-size: 14px;
+}
+.register-container p a,
+.forgot-container p a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+}
+.register-container p a:hover,
+.forgot-container p a:hover {
+  text-decoration: underline;
+}
+
+/* 🟢 Navbar */
+.navbar {
+  width: 100%;
+  height: 60px;
+  background: #4caf50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.navbar h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.navbar button {
+  margin-left: 10px;
+  background: #333;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.navbar button:hover {
+  background: #222;
+}
+
+/* 🔑 Auth Container */
+.login-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  margin: 100px auto;
+  width: 400px;
+  max-width: 90%;
+}
+.login-container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #4caf50;
+}
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+form button {
+  width: 100%;
+  padding: 12px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+form button:hover {
+  background: #388e3c;
+}
+form p {
+  margin-top: 12px;
+  font-size: 14px;
+}
+form p a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+}
+form p a:hover {
+  text-decoration: underline;
+}
+
+/* 📄 Pages */
+.page {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  margin: 20px auto;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.page h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 22px;
+}
+
+/* 📊 Input Section */
+#input-section label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+#input-section input,
+#input-section select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 14px;
+}
+#input-section button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#input-section button:hover {
+  background: #388e3c;
+}
+
+/* 📑 Data Table */
+#data-table, #admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+#data-table th,
+#data-table td,
+#admin-table th,
+#admin-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+#data-table th,
+#admin-table th {
+  background: #4caf50;
+  color: white;
+}
+
+/* 🌟 Rewards Section */
+#stars-container {
+  margin-top: 15px;
+  font-size: 28px;
+  color: gold;
+  display: flex;
+  justify-content: center;
+}
+#stars-container .star {
+  margin: 0 5px;
+}
+
+/* Admin sections */
+#leaderboard-section, #admin-add-section, #submissions-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+#leaderboard-section h3, #admin-add-section h3, #submissions-section h3 {
+  margin-bottom: 15px;
+  color: #4caf50;
+  font-size: 18px;
+}
+
+/* Leaderboard table */
+#leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#leaderboard-table th,
+#leaderboard-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+#leaderboard-table th {
+  background: #2196f3;
+  color: white;
+}
+
+#leaderboard-table tr:nth-child(1) td {
+  background: #ffd700;
+  font-weight: bold;
+}
+
+#leaderboard-table tr:nth-child(2) td {
+  background: #c0c0c0;
+  font-weight: bold;
+}
+
+#leaderboard-table tr:nth-child(3) td {
+  background: #cd7f32;
+  font-weight: bold;
+}
+
+/* Admin form */
+.admin-form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.admin-form-row select,
+.admin-form-row input {
+  flex: 1;
+  min-width: 120px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.admin-form-row button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.admin-form-row button:hover {
+  background: #388e3c;
+}
+
+/* Action buttons */
+.action-btn {
+  padding: 5px 10px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.edit-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #1976d2;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+}
+
+/* Modal for editing */
+.edit-modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  padding-top: 60px;
+}
+
+.edit-modal-content {
+  background: white;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.edit-modal h3 {
+  margin-bottom: 20px;
+  color: #4caf50;
+}
+
+.edit-modal input,
+.edit-modal select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.edit-modal button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.save-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #388e3c;
+}
+
+.cancel-btn {
+  background: #666;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #555;
+}
+
+/* Info text for plastic types */
+.info-text {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .login-container {
+    width: 95%;
+    padding: 20px;
+  }
+  .page {
+    width: 95%;
+    padding: 15px;
+  }
+  .navbar h2 {
+    font-size: 16px;
+  }
+  .navbar button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .close {
+    right: 20px;
+    font-size: 35px;
+  }
+  
+  #data-table, #admin-table {
+    font-size: 12px;
+  }
+  
+  #data-table th,
+  #data-table td,
+  #admin-table th,
+  #admin-table td {
+    padding: 6px;
+  }
+  
+  .admin-form-row {
+    flex-direction: column;
+  }
+  
+  .admin-form-row select,
+  .admin-form-row input,
+  .admin-form-row button {
+    width: 100%;
+    min-width: auto;
+  }
+}
